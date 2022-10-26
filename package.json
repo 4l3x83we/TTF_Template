@@ -1,0 +1,69 @@
+{
+  "name": "thueringer_tuning_freunde_2023_template",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4l3x83we/TTF_Template"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/4l3x83we/TTF_Template/issues"
+  },
+  "homepage": "https://github.com/4l3x83we/TTF_Template#readme",
+  "devDependencies": {
+    "sass": "^1.55.0",
+    "vite": "^3.1.8",
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@popperjs/core": "^2.11.6",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "bootstrap": "^5.2.2",
+    "husky": "^8.0.1",
+    "release-it": "^15.5.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "sectoion": "Features"
+            },
+            {
+              "type": "fix",
+              "sectoion": "Bug Fixes"
+            },
+            {}
+          ]
+        }
+      }
+    }
+  }
+}
